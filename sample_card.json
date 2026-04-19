@@ -1,0 +1,39 @@
+{
+  "name": "example-notes-server",
+  "version": "1.2.3",
+  "protocol_version": "2.1",
+  "description": "Sample Server Card used by the validate subcommand demo.",
+  "capabilities": {
+    "tools": true,
+    "resources": false,
+    "prompts": false,
+    "logging": true,
+    "streamable_http": true
+  },
+  "endpoints": {
+    "jsonrpc": "/rpc"
+  },
+  "tools": [
+    {
+      "name": "list_notes",
+      "description": "Return all notes for the current user.",
+      "input_schema": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      }
+    },
+    {
+      "name": "create_note",
+      "description": "Create a new note.",
+      "input_schema": {
+        "type": "object",
+        "properties": {
+          "title": {"type": "string"},
+          "body": {"type": "string"}
+        },
+        "required": ["title", "body"]
+      }
+    }
+  ]
+}
